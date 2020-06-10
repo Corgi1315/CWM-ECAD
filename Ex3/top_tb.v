@@ -16,7 +16,7 @@ module top_tb(
 
 
 //Todo: Regitsers and wires
-reg rst,direction,enable,counter_out[7:0];
+reg rst,direction,enable,clk,counter_out[7:0];
 	initial begin
 	rst=1;
 	enable=1;
@@ -32,8 +32,7 @@ reg rst,direction,enable,counter_out[7:0];
 		direction=0;
 	#10 rst=0;
 		enable=0;
-		direction=0;
-	$display(“counter_out=%h, data_out=%h”, data, data_out);
+		direction=0;;
 	end
 
 //Todo: Clock generation
@@ -47,6 +46,6 @@ reg rst,direction,enable,counter_out[7:0];
 
 
 //Todo: Instantiate counter module
-mymodule top(clk,rst,enable,direction,counter_out)
+mymodule top(clk,rst,enable,direction,counter_out);
  
 endmodule 
