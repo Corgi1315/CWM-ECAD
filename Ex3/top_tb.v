@@ -13,16 +13,40 @@
 module top_tb(
     );
     
-//Todo: Parameters
+
 
 //Todo: Regitsers and wires
+reg rst,direction,enable,counter_out[7:0];
+	initial begin
+	rst=1;
+	enable=1;
+	direction=1;
+	#10 rst=0;
+	enable=1;
+	direction=1;
+	#10 rst=0;
+	enable=0;
+	direction=1;
+	#10 rst=0;
+		enable=1;
+		direction=0;
+	#10 rst=0;
+		enable=0;
+		direction=0;
+	$display(“counter_out=%h, data_out=%h”, data, data_out);
+	end
 
 //Todo: Clock generation
+	parameter clk_period=10;
+		initial begin
+			clk=1'b0;
+			forever
+				#(clk_period/2)clk=~clk;
+		end
+	
 
-//Todo: User logic
-    
-//Todo: Finish test, check for success
 
 //Todo: Instantiate counter module
+mymodule top(clk,rst,enable,direction,counter_out)
  
 endmodule 
