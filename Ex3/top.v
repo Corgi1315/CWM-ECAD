@@ -33,7 +33,7 @@ module counter(
     //Todo: add user logic
 	always @(posedge clk)
 	begin
-		if(rst==0) 
+		if(rst==0)
 			if (enable==1)
 				if (direction==1)
 					counter_out<=counter_out+(7'b1);

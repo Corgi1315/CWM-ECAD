@@ -46,6 +46,6 @@ reg rst,direction,enable,clk,counter_out[7:0];
 
 
 //Todo: Instantiate counter module
-mymodule top(clk,rst,enable,direction,counter_out);
+counter top(clk,rst,enable,direction);
  
 endmodule 
