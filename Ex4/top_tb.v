@@ -27,9 +27,7 @@ module top_tb();
 	button=0;
 	#10
 	button=1;
-	#10
-	button=0;
-	#10
+	#60
 	rst=0;
 	end
 
