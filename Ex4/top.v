@@ -27,15 +27,19 @@ module dice (
 		begin
 		if (rst==1)
 			throw<=3'b0;
-		else
+		else //more then one line after this
+			begin
 			throw<=3'b1;
 			if (button==0)
 				throw<=throw;
-			else 
+			else   //more than one line after this
+				begin
 				if (throw==(3'b110))
 					throw<=3'b1;
 				else
 					throw<=throw+3'b1;
+				end
+			end
 		end
 
 endmodule
