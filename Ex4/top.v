@@ -19,29 +19,25 @@ module dice (
 	input rst,
 	input clk,
 	input button,
-	output reg throw
+	output reg[2:0]throw
 	);
 
-	reg [2:0] throw;
 
 	always @(posedge clk)
 		begin
-		if (rst==0)
-			begin
+		if (rst==1)
+			throw<=3'b0;
+		else
 			throw<=3'b1;
-			if (button==1)
+			if (button==0)
+				throw<=throw;
+			else 
 				if (throw==(3'b110))
 					throw<=3'b1;
 				else
 					throw<=throw+3'b1;
-			else
-				throw<=throw;
-			end
-		else
-			begin
-			throw<=3'b0;
-			end
 		end
+
 endmodule
 
 				
